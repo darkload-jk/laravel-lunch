@@ -2,4 +2,7 @@
   "devDependencies": {
     "tailwindcss": "^3.3.1"
   }
+   "scripts": {
+    "heroku-postbuild": "npm run prod"
+  }
 }
