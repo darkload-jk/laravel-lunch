@@ -65,11 +65,12 @@ return [
 
     'pgsql' => [
             'driver' => 'pgsql',
-            'host' => $DATABASE_URL["host"],
-            'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'url' => env('DATABASE_URL'),
+            'host' => parse_url(env('postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq'), ec2-3-93-160-246.compute-1.amazonaws.com),
+            'port' => parse_url(env('postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq'), 5432),
+            'database' => substr(parse_url(env('postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq'), postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq), 1),
+            'username' => parse_url(env('postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq'), ifnwxzvfsojmfk),
+            'password' => parse_url(env('postgres://ifnwxzvfsojmfk:05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787@ec2-3-93-160-246.compute-1.amazonaws.com:5432/d57pc889h4v3kq'), 05156bfc554e4b2e64dfc212d159171eb7485fa0987fbba217b83053bdbe1787),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
