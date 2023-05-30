@@ -2,11 +2,4 @@
   "devDependencies": {
     "tailwindcss": "^3.3.1"
   }
-    
-   "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-        "heroku-postbuild": "npm run build"
-    }
 }
