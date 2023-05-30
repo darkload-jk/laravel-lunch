@@ -20,7 +20,7 @@ return new class extends Migration
             $table->id('price_id');
 
             $table->foreign('price_id')
-                  ->references('id')
+                  ->references('price_id')
                   ->on('prices')
                   ->cascadeOnUpdate();
         });
