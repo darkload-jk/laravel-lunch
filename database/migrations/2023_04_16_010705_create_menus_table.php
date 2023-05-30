@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('menu_id')->nullable()->unique();
             $table->string('menu');
             $table->id('price_id');
 
             $table->foreign('price_id')
-                  ->references('price_id')
+                  ->references('id')
                   ->on('prices')
                   ->cascadeOnUpdate();
         });
