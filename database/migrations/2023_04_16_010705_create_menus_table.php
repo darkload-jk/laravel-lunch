@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('menu_id')->nullable()->unique();
             $table->string('menu');
-            $table->unsignedBigInteger('price_id');
+            $table->id('price_id');
 
             $table->foreign('price_id')
-                  ->references('price_id')
+                  ->references('id')
                   ->on('prices')
                   ->cascadeOnUpdate();
         });
