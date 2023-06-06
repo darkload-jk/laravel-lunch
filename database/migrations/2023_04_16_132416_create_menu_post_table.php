@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('menu_post', function (Blueprint $table) {
             $table->unsignedBigInteger('post_id');
-            $table->foreign('post_id')->references('post_id')->on('posts')->cascadeOnUpdate();
+            $table->foreign('post_id')->references('id')->on('posts')->cascadeOnUpdate();
 
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate();
             
-            $table->unsignedBigInteger('menu_id')->nullable();
-            $table->foreign('menu_id')->references('menu_id')->on('menus')->cascadeOnUpdate();
+            $table->unsignedBigInteger('menu_id');
+            $table->foreign('menu_id')->references('id')->on('menus')->cascadeOnUpdate();
             
-            $table->unsignedBigInteger('price_id')->nullable();
-            $table->foreign('price_id')->references('price_id')->on('prices')->cascadeOnUpdate();
+            $table->unsignedBigInteger('price_id');
+            $table->foreign('price_id')->references('id')->on('prices')->cascadeOnUpdate();
             $table->timestamps();
         }); 
     }
